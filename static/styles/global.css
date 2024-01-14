@@ -1,0 +1,57 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+@font-face {
+    font-family: mainfont;
+    src: url("../fonts/Poppins-Medium.ttf");
+}
+
+body {
+    background-image: url("../images/background.jpg");
+    font-family: mainfont;
+    color: #fafafa;
+    backdrop-filter: blur(25px);
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100% ;
+}
+
+.navbar {
+    padding: 10px;
+}
+
+.main-logo img {
+    border-radius: 10px;
+}
+
+.nav-link {
+    color: #eaeaea !important;
+}
+
+.jumbotron {
+    background: none !important;
+    text-align: center;
+}
+
+.description {
+    color: #c2c0c0;
+}
+
+.btn-primary {
+    background-color: rgba(0, 0, 0, 0.582);
+    border: none !important;
+}
+
+.btn-primary:hover {
+    background-color: rgba(0, 0, 0, 0.582);
+    border: none !important;
+}
+
+.btn-link {
+    color: #eaeaea !important;
+    text-decoration: none !important;
+}

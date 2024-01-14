@@ -1,0 +1,19 @@
+{% extends 'layout.jinja' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Signup{% endblock %}
+{% block content %}
+<div class="container w-75" align="left">
+    {% if request.user.is_authenticated %}
+    <script>document.location.href = '/'</script>
+    {% else %}
+    <h1 align="center">Signup</h1>
+    <form enctype="multipart/form-data"method="POST">
+        {% csrf_token %}
+        {{form.media}}
+        {{form|crispy}}
+        <button type="submit" class="btn btn-primary">Signup</button>
+    </form>
+    {% endif %}
+</div>
+{% endblock %}
