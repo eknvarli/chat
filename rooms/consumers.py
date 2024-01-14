@@ -45,6 +45,28 @@ class ChatConsumer(AsyncWebsocketConsumer):
         username = event['username']
         room = event['room']
 
+        # emojis
+        match message:
+            case ':D':
+                message = '😃'
+            case ':)':
+                message = '😊'
+            case '<3':
+                message = '❤️'
+            case '::fire':
+                message = '🔥'
+            case '::cool':
+                message = '😎'
+            case '::ball':
+                message = '⚽'
+            # ...
+        
+        if 'http://' in message:
+            message = 'I share http link, but George stopped me.'
+
+        if message.startswith('https'):
+            message = f'<a target="_blank" href={message}>{message}</a>'
+
         await self.save_message(username, room, message)
 
         await self.send(text_data=json.dumps({

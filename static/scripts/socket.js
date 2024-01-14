@@ -27,6 +27,7 @@ chatSocket.onmessage = (e) => {
 
     var formattedDate = currentDate.toLocaleString('en-US', options);
 
+
     if (data.message) {
         let html = '<div class="message-item"><span id="username"><strong>'
         html += data.username
