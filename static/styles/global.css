@@ -11,8 +11,8 @@ body {
     font-family: mainfont;
     color: #fafafa;
     backdrop-filter: blur(25px);
-    width: 100% !important;
-    height: 100% !important;
+    width: auto !important;
+    height: auto !important;
 }
 
 .container {

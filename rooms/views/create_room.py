@@ -8,7 +8,9 @@ def create_room(request):
     if request.method == 'POST':
         form = CreateRoomForm(request.POST)
         if form.is_valid():
-            form.save()
+            room = form.save(commit=False)
+            room.owner = request.user
+            room.save()
             return redirect('rooms')
     else:
         form = CreateRoomForm()

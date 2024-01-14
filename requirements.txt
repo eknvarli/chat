@@ -1,4 +1,7 @@
 django
+channels
+daphne
 django-crispy-forms
 crispy-bootstrap4
 django-autoslug
+pillow

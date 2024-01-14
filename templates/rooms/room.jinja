@@ -1,36 +1,42 @@
 {% extends 'layout.jinja' %}
+{% load static %}
 {% block title %}{{room.name}}{% endblock %}
 
 {% block content %}<br>
 <div class="room container">
-    <h1 align="center">{{room.name}}</h1>
-
     <div class="chat-messages">
         <div class="row">
             <div class="col-sm-8 room-messages">
                 <div class="message-item">
-                    <span id="username"><strong>George BOT</strong></span><br>
-                    <span id="message">Welcome to {{room.name}} room.</span><br>
-                    <span id="sended-at" class="text-secondary"><small>14.01.2024 11:00</small></span>
+                    <span id="username"><strong>George <span class="badge badge-secondary">BOT</span></strong></span><br>
+                    <span id="message">Welcome to "{{room.name}}" room.</span><br>
                 </div>
+                {% for message in messages %}
+                <div class="message-item">
+                    <span id="username"><strong>{{message.user.username}}</strong> &nbsp; <small
+                            class="text-secondary">{{message.date_added}}</small></span><br>
+                    <span id="message">{{message.content}}</span><br>
+                </div>
+                {% endfor %}
             </div>
             <div class="col-sm-4 room-panel">
-                <h5>Owner: <strong>Kadir Hoca</strong></h5>
+                <h5>Owner: <strong>{{room.owner}}</strong></h5>
                 <div class="input-group mb-3">
                     <input id="copylink" type="text" class="form-control" placeholder="Share room."
-                        aria-label="Share room." value="https://rettoapp.info/rooms/{{room.slug}}/" aria-describedby="basic-addon2">
+                        aria-label="Share room." value="https://rettoapp.info/rooms/{{room.slug}}/"
+                        aria-describedby="basic-addon2">
                     <div class="input-group-append">
                         <button id="copybutton" class="btn btn-outline-secondary" type="button">Copy</button>
                     </div>
                 </div><br><br>
                 <h5>Online Users</h5>
-                <li>Ekincan</li>
+                <li>online users</li>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-8 send-message-area">
-                <form>
-                    <input class="form-control" placeholder="Send message.">
+                <form id="send-message-form">
+                    <input id="send-message-input" class="form-control" placeholder="Send message.">
                 </form>
             </div>
             <div class="col-sm-4 blank-area">
@@ -38,4 +44,11 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+{{room.slug|json_script:"json-roomname"}}
+{{request.user.username|json_script:"json-username"}}
+
+<script src="{% static 'scripts/socket.js' %}"></script>
 {% endblock %}
