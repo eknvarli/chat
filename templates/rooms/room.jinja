@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %}{{room.name}}{% endblock %}
 
-{% block content %}<br>
+{% block content %}
 <div class="room container">
     <div class="chat-messages">
         <div class="row">
@@ -28,9 +28,8 @@
                     <div class="input-group-append">
                         <button id="copybutton" class="btn btn-outline-secondary" type="button">Copy</button>
                     </div>
-                </div><br><br>
-                <h5>Online Users</h5>
-                <li>online users</li>
+                </div>
+                <a href="{% url 'rooms' %}">Leave Room</a>
             </div>
         </div>
         <div class="row">
@@ -43,7 +42,7 @@
             </div>
         </div>
     </div>
-</div>
+</div><br><br>
 {% endblock %}
 
 {% block scripts %}
