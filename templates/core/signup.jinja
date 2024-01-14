@@ -5,7 +5,7 @@
 {% block content %}
 <div class="container w-75" align="left">
     {% if request.user.is_authenticated %}
-    <script>document.location.href = '/'</script>
+    <script>document.location.href = '/rooms/'</script>
     {% else %}
     <h1 align="center">Signup</h1>
     <form enctype="multipart/form-data"method="POST">

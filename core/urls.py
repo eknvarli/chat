@@ -8,6 +8,6 @@ urlpatterns = [
     path('logout/', logout, name='logout'),
     path('profile/', editprofile, name='profile'),
     path('login/', auth_views.LoginView.as_view(
-        template_name='core/login.jinja '
+        template_name='core/login.jinja'
     ), name='login')
 ]

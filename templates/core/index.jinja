@@ -4,13 +4,14 @@
 {% block content %}
 
 <div class="index container">
-    {% if request.user.is_authenticated %}
-    user logged in
+    {% if request.user.is_authenticated %}<br>
+    <script>document.location.href = '/rooms/'</script>
     {% else %}
     <div class="jumbotron">
         <h1 class="display-4"><strong>Fast, strong and secure<br>social platform.</strong></h1>
         <p class="lead description">
-            An alternative to Teams or Discord. Retto is designed to be the place where your teammates engage. Organise discussions in channels. React with emojis. Share code snippets.
+            An alternative to Teams or Discord. Retto is designed to be the place where your teammates engage. Organise
+            discussions in channels. React with emojis. Share code snippets.
         </p>
         <hr class="my-4">
         <p class="description">
