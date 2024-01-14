@@ -1,0 +1,37 @@
+{% extends 'layout.jinja' %}
+{% block title %}Rooms{% endblock %}
+
+{% block content %}<br>
+<div class="container rooms w-75">
+    <h1 align="center">Rooms</h1>
+    <br>
+    <h4>Welcome, <strong>{{request.user}}</strong>.</h4>
+    <div class="room-list">
+        <h5>Search Room</h5>
+        <form action="{% url 'rooms' %}" class="d-flex">
+            <input class="form-control w-75" name="search" type="search" placeholder="Search room">
+        </form>
+        <br>
+        {% for room in rooms %}
+        <span><a id="room-link" href="{{room.slug}}/"><strong>#{{room.slug}}</strong></a> | {{room}}</span>
+        <br>
+        {% endfor %}
+
+        <br>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                {% if rooms.has_previous %}
+                <li class="page-item"><a class="page-link" href="?rooms={{rooms.previous_page_number}}">Previous</a>
+                </li>
+                {% endif %}
+                <li class="page-item"><a class="page-link" href="?rooms={{rooms.number}}">{{rooms.number}}</a></li>
+
+                {% if rooms.has_next %}
+                <li class="page-item"><a class="page-link" href="?rooms={{rooms.next_page_number}}">Next</a></li>
+                {% endif %}
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+{% endblock %}
