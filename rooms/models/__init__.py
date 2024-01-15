@@ -1,2 +1,2 @@
-from .room import Room
+from .room import Room, RoomCategory
 from .message import Message

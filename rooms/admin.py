@@ -1,6 +1,10 @@
 from django.contrib import admin
-from rooms.models import Room, Message
+from rooms.models import Room, Message, RoomCategory
 
 # Register your models here.
-admin.site.register(Room)
+class RoomAdmin(admin.ModelAdmin):
+    list_display = ('name','category')
+
+admin.site.register(Room, RoomAdmin)
 admin.site.register(Message)
+admin.site.register(RoomCategory)
