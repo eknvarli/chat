@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'core',
     'rooms',
     # third-party
+    'ckeditor',
     'crispy_forms',
     'crispy_bootstrap4',
 ]

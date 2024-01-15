@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from core.models import CustomUser
+from core.models import CustomUser, Script
 
 # Register your models here.
 @admin.register(CustomUser)
@@ -11,3 +11,5 @@ class CustomAdmin(UserAdmin):
             'fields':['avatar']
         }),
     )
+
+admin.site.register(Script)
