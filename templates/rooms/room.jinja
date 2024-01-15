@@ -15,7 +15,7 @@
                 <div class="message-item">
                     <span id="username"><strong>{{message.user.username}}</strong> &nbsp; <small
                             class="text-secondary">{{message.date_added}}</small></span><br>
-                    <span id="message">{{message.content}}</span><br>
+                    <span id="message">{{message.content|safe}}</span><br>
                 </div>
                 {% endfor %}
             </div>
