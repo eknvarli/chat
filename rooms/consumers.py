@@ -45,23 +45,22 @@ class ChatConsumer(AsyncWebsocketConsumer):
         username = event['username']
         room = event['room']
 
+
         # emojis
-        match message:
-            case ':D':
-                message = '😃'
-            case ':)':
-                message = '😊'
-            case '<3':
-                message = '❤️'
-            case '::fire':
-                message = '🔥'
-            case '::cool':
-                message = '😎'
-            case '::ball':
-                message = '⚽'
-            # ...
+        if ':D' in message:
+            message = message.replace(':D','😃')
+        elif ';)' in message:
+            message = message.replace(';)','😏')
+        elif ':)' in message:
+            message = message.replace(':)','🙂')
+        elif '<3' in message:
+            message = message.replace('<3','❤️')
+        elif '::cool' in message:
+            message = message.replace('::cool','😎')
+        elif '::star' in message:
+            message = message.replace('::star','⭐')
         
-        if 'http://' in message:
+        elif 'http://' in message:
             message = 'I share http link, but George stopped me.'
 
         if message.startswith('https'):
