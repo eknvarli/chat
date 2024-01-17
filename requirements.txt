@@ -5,3 +5,5 @@ django-crispy-forms
 crispy-bootstrap4
 django-autoslug
 pillow
+django-ckeditor
+django-environ

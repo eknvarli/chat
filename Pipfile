@@ -11,6 +11,8 @@ crispy-bootstrap4 = "*"
 django-autoslug = "*"
 pillow = "*"
 daphne = "*"
+django-environ = "*"
+django-ckeditor = "*"
 
 [dev-packages]
 
