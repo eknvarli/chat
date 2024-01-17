@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from core.forms import EditProfileForm
+from scripts.models import Script
 
 @login_required(login_url='/')
 def editprofile(request):
@@ -12,6 +13,8 @@ def editprofile(request):
     else:
         form = EditProfileForm(instance=request.user)
 
+    scripts = Script.objects.filter(author=request.user)
     return render(request, 'core/edit.jinja', context={
-        'form':form
+        'form':form,
+        'scripts':scripts
     })

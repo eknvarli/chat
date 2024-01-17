@@ -11,5 +11,14 @@
         {{form|crispy}}
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
+
+    <h2>Select Operation</h2>
+    <li><a href="{% url 'writescript' %}">Write Script</a></li>
+    <br>
+    <h2>Your Scripts</h2>
+    {% for script in scripts %}
+        <li>{{script}} &nbsp;&nbsp;<a href="{% url 'delete_script' script.id %}">Remove Script</a></li>
+    {% endfor %}
 </div>
+<br><br>
 {% endblock %}
