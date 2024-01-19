@@ -13,7 +13,7 @@
         </form>
         <br>
         {% for room in rooms %}
-        <span><a id="room-link" href="{{room.slug}}/"><strong>#{{room.slug}}</strong></a> | {{room}}</span>
+        <span><a id="room-link" href="{{room.slug}}/"><strong>#{{room.slug}}</strong></a> | {{room.category}}</span>
         <br>
         {% endfor %}
 

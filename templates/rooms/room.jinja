@@ -31,6 +31,17 @@
                     </div>
                 </div>
                 <a href="{% url 'rooms' %}">Leave Room</a>
+
+                <br><br>
+                <h5>Scripts:</h5>
+                {% if script %}
+                {% for x in script %}                
+                <li><a href="/scripts/{{x.slug}}/">{{x.name}}</a></li>
+                {% endfor %}
+
+                {% else %}
+                script yok
+                {% endif %}
             </div>
         </div>
         <div class="row">
