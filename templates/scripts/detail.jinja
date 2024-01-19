@@ -4,11 +4,14 @@
 {% block title %}{{script.name}}{% endblock %}
 {% block content %}
 <div class="container w-75" align="left"><br><br>
-    <h1 align="center"><strong>{{script.name}}</strong></h1><hr class="w-50">
+    <h1 align="center"><strong>{{script.name}}</strong></h1>
+    <hr class="w-50">
     <form enctype="multipart/form-data" method="POST">
         {% csrf_token %}
         {{script.media}}
         {{script.content|safe}}
     </form>
+    <br>
+    <a href="/rooms/{{script.room.slug}}/" class="btn btn-primary"><i class="bi bi-arrow-left"></i>&nbsp; Back to Room</a><br><br>
 </div>
 {% endblock %}
