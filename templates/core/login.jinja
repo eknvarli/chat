@@ -9,6 +9,7 @@
     {% else %}
     <h1 align="center">Login</h1>
     <form enctype="multipart/form-data"method="POST">
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
         {% csrf_token %}
         {{form.media}}
         {{form|crispy}}
