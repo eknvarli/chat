@@ -36,6 +36,7 @@ CSRF_TRUSTED_ORIGINS = ['https://chat.retto.social','http://127.0.0.1:8000']
 
 CSRF_COOKIE_SECURE = False
 CSRF_COOKIE_SAMESITE = None
+CSRF_USE_SESSIONS = False
 
 # Application definition
 
