@@ -31,8 +31,8 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['4ab8-88-236-177-13.ngrok-free.app','127.0.0.1','*']
-CSRF_TRUSTED_ORIGINS = ['https://4ab8-88-236-177-13.ngrok-free.app','http://127.0.0.1:8000']
+ALLOWED_HOSTS = ['chat.retto.social','127.0.0.1','*']
+CSRF_TRUSTED_ORIGINS = ['https://chat.retto.social','http://127.0.0.1:8000']
 
 CSRF_COOKIE_SECURE = False
 CSRF_COOKIE_SAMESITE = None
